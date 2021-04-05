@@ -9,7 +9,7 @@ Now you can use Tick as time
 
 ```jsonc
 {
-    "time": "tick: 1920",
+    "time": "tick:1920",
     //.....
 }
 ```
