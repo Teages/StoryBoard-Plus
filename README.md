@@ -3,7 +3,12 @@ StoryBoard++ for Cytoid
 
 ## Functions
 
-### Tick to time
+The Compile Order: 
+1. [Tick as time](#tick-as-time)
+2. [State Inheritance](#state-inheritance)
+3. [Multi-state](#multi-state)
+   
+### Tick as time
 
 Now you can use Tick as time
 
@@ -11,6 +16,58 @@ Now you can use Tick as time
 {
     "time": "tick:1920",
     //.....
+}
+```
+
+### State Inheritance 
+```jsonc
+{
+    //......
+    "states": [
+        {
+            "time": 0,
+            "x": 0
+        },
+        {
+            "time": 5,
+            "y": 0
+        },
+        {
+            "time": 10,
+            "x": 1
+        },
+        {
+            "time": 15,
+            "y": 1
+        }
+    ]
+}
+```
+
+```jsonc
+{
+    //......
+    "states": [
+        {
+            "time": 0,
+            "x": 0
+        },
+        {
+            "time": 5,
+            "x": 0.5,
+            "y": 0
+        },
+        {
+            "time": 10,
+            "x": 1,
+            "y": 0.5
+        },
+        {
+            "time": 15,
+            "x": 1,
+            "y": 1
+        }
+    ]
 }
 ```
 
@@ -46,10 +103,10 @@ Now you can use Tick as time
 }
 ```
 will translate to:
-```
+```jsonc
 {
     //......
-    "id": "d9d53f76", // firts 8 char of hash the orginal json "{xxx}"
+    "id": "d9d53f76", // random string
     "states": [
         {
             "easing": "linear",
@@ -73,58 +130,6 @@ will translate to:
         },
         {
             "time": 15,
-            "y": 1
-        }
-    ]
-}
-```
-
-### State Inheritance 
-```
-{
-    //......
-    "states": [
-        {
-            "time": 0,
-            "x": 0
-        },
-        {
-            "time": 5,
-            "y": 0
-        },
-        {
-            "time": 10,
-            "x": 1
-        },
-        {
-            "time": 15,
-            "y": 1
-        }
-    ]
-}
-```
-
-```
-{
-    //......
-    "states": [
-        {
-            "time": 0,
-            "x": 0
-        },
-        {
-            "time": 5,
-            "x": 0.5,
-            "y": 0
-        },
-        {
-            "time": 10,
-            "x": 1,
-            "y": 0.5
-        },
-        {
-            "time": 15,
-            "x": 1,
             "y": 1
         }
     ]
